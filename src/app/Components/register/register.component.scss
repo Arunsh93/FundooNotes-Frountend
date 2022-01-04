@@ -1,0 +1,143 @@
+$CommonColor: #1a73e8;
+@mixin columnflex
+{
+    display: flex;
+    flex-direction: column;
+}
+@mixin rowflex {
+    display: flex;
+    flex-direction: row;
+}
+@mixin spaceBetween {
+    display: flex;
+    justify-content: space-between;
+}
+.RegisterPage{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.MainCard{
+    display: flex;
+    margin: 0 auto;
+    height: 570px;
+    width: 765px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+    transition: 0.3s;
+    border-radius: 5px;
+    border: 2px #ebf0f7;
+}
+.LeftDivison{
+    justify-content: center;
+    align-items: flex-start;
+    margin: 10px;
+    padding-left: 15px;
+}
+.mat-card>:first-child, .mat-card-content>:first-child {
+   margin-top: 40px;
+}
+.Header{
+    display: flex;
+    justify-content: flex-start;
+    font-size: 24px;
+    margin-left: 0px;
+    font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+    font-weight: bold;
+}
+.sub-header{
+    display: flex;
+    font-size: 25px;
+    margin-left: 0px;
+    font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+}
+.RowContainer{
+    @include rowflex();
+    margin-top: 5px;
+    div{
+        margin-right: 0px;
+    }
+    .check{
+        margin-left: 5px;
+    }
+}
+.FormFields{
+    min-width: 95%;
+    margin-top: 10px;
+    margin-right: 0px;
+    margin-left: 10px;
+    //height: 20px;
+    padding: 10px;
+}
+.Names{
+    @include spaceBetween();
+    min-width: 30%;
+    font-size: 14px;
+    margin-top: 10px;
+}
+.lastName{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+.UserEmail{
+    width: 100%;
+    padding-bottom: 5%;
+}
+.icon
+{
+    font-size: 15px;
+}
+.hint{
+   font-size: 13px;
+}
+::ng-deep .mat-form-field-flex > .mat-form-field-infix { padding: 0.4em 0px !important;}
+::ng-deep .mat-form-field-label-wrapper { top: -1.5em; }
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-infix {
+    padding: .7em;
+    width: 120.33333%;
+}
+::ng-deep .mat-form-field.mat-focused .mat-form-field-label {
+    color: $CommonColor !important;
+}
+.currentEmail{
+    color: rgba(48, 48, 189, 0.61);
+    font-weight: bold;
+    margin-left: 10px;
+    font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+}
+.passwordHint
+{
+    margin-left: 10px;
+    margin-top: -18px;
+    font-size: 12px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.ButtonContent{
+    @include rowflex();
+    justify-content: space-between;
+    margin-top: 30px;
+    padding-top: 30px;
+
+    button{
+        color: white;
+        background-color: var(--gm-colortextbutton-ink-color,#1a73e8);
+        margin-right: 2ex;
+        display: table-cell;
+        width: 80px;
+    }
+}
+a 
+{
+    color: var(--gm-colortextbutton-ink-color,#1a73e8);
+}
+.RightDivison{
+    @include columnflex();
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
+    margin: 40px;
+    margin-top: 30px;
+    width: 35%;
+}
