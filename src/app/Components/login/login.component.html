@@ -7,23 +7,26 @@
                     <span style="color: rgb(240, 14, 14)">u</span>
                     <span style="color: orange">n</span>
                     <span style="color: rgba(132, 0, 255, 0.815);">d</span>
-                    <span style="color: rgb(0, 128, 100);">o</span>
+                    <span style="color: rgb(5, 90, 71);">o</span>
                     <span style="color: rgb(253, 13, 13);">o</span>
                 </p>
             </mat-card-title>
             <h2 class="subHeader">Sign in</h2>
             <h3 class="subHeader2">Use your Fundoo Account</h3>
-            <form class="loginForm">
+            <form [formGroup]="LoginForm">
                 <div>
                     <mat-form-field appearance="outline">
                         <mat-label>Email or phone</mat-label>
-                        <input matInput placeholder="Email or phone">
+                        <input matInput formControlName="email">
+                        <mat-error *ngIf="LoginForm.hasError('email', 'email')">Invlaid EmailId</mat-error>
+                        <mat-error *ngIf="LoginForm.hasError('required', 'email')">EmailId is Required</mat-error>
                     </mat-form-field>
                 </div>
                 <div>
                     <mat-form-field appearance="outline">
                         <mat-label>Password</mat-label>
-                        <input matInput placeholder="Password">
+                        <input matInput formControlName="password" [type]="hide? 'password': 'text'" pattern="{{this.LoginForm.value.password}}">
+                        <mat-error *ngIf="LoginForm.hasError('required', 'password')">Password is Required</mat-error>
                     </mat-form-field>
                 </div>
                 <div>
@@ -31,7 +34,7 @@
                 </div>
                 <div class="ButtonContent">
                     <a mat-button href="/register">Create account</a>
-                    <button mat-button color="primary">Sign In</button>
+                    <button mat-button color="primary" (click)="Login()">Sign In</button>
                 </div>
             </form>
         </div>

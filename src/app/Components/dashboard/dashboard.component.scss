@@ -1,0 +1,58 @@
+@mixin flexProperties {
+    display: flex;
+    align-items: center;
+}
+.Dashboard{
+    height: 100%;
+    overflow: auto;
+}
+.mat-toolbar{
+    @include flexProperties();
+    flex: 1 1 auto;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white;
+    border-bottom: 1px solid rgb(218, 220, 224);
+}
+.ToolbarIcons{
+    @include flexProperties();
+    .imgicon{
+        padding-left: 10px;
+        padding-top: 8px;
+    }
+    .fundoo{
+        padding-left: 10px;
+        color: #585a5c;
+        font-family: 'Product Sans',Arial,sans-serif;
+        opacity: 5;
+        font-size: 22px;
+        line-height: 24px;
+        font-weight: 550;
+        vertical-align: middle;
+    }
+    ::ng-deep .mat-form-field {
+        .mat-form-field-flex {
+            //@include flexProperties;
+            align-items: center;
+            height: 80%;
+            border-radius: 10px !important;
+            margin-top: 1.8em;
+            font-size: 15px;
+            padding: 1px !important;
+            margin-left: 55px;
+            width: 110%;   
+        }
+        .mat-form-field-underline {
+            width: 0;
+        }
+    }
+    ::ng-deep .mat-form-field-prefix .mat-icon, .mat-form-field-suffix .mat-icon {
+        font-size: 150%;
+        line-height: 1.1;
+        padding-left: 15px;
+        vertical-align: middle;
+    }
+    .refresh{
+        padding-left: 230px;
+    }
+}
