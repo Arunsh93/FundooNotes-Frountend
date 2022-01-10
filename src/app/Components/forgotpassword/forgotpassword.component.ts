@@ -28,7 +28,7 @@ export class ForgotPasswordComponent implements OnInit {
   ForgotPassword(){
     try
     {
-      this.userService.ForgotPassword(this.ForgotPasswordForm.value)
+      this.userService.ForgotPassword(this.ForgotPasswordForm.value.email)
       .subscribe((result : any) => {
         if(result.stasus)
         console.log("Email Send Successfully", result);

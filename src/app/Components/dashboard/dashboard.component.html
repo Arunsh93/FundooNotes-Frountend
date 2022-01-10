@@ -1,7 +1,7 @@
 <div class="Dashboard">
     <mat-toolbar>
-        <div class="ToolbarIcons">  
-            <button mat-icon-button aria-label="Main menu">
+        <div class="ToolbarIcons">
+            <button mat-icon-button>
                 <mat-icon>menu</mat-icon>
             </button>
             <span class="imgicon">
@@ -13,13 +13,50 @@
                 <mat-icon class="material-icons" matPrefix [style.margin-right.px]=12>search</mat-icon>
                 <mat-icon class="material-icons" matSuffix [style.margin-right.px]=12>close</mat-icon>
             </mat-form-field>
-            <button mat-icon-button class="refresh" matTooltip="Refresh">
-                <mat-icon>refresh</mat-icon>
-            </button>
-            <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-                <mat-icon>view_list</mat-icon>
-                <mat-icon>grid_view</mat-icon>
-            </button>
+            <div class="rightside">
+                <button mat-icon-button matTooltip="Refresh">
+                    <mat-icon>refresh</mat-icon>
+                </button>
+                <button mat-icon-button>
+                    <mat-icon class="list">view_list</mat-icon>
+                    <mat-icon class="grid">grid_view</mat-icon>
+                    <mat-icon class="AppsIcon">apps</mat-icon>
+                    <mat-icon class="profilePic">account_box</mat-icon>
+                </button>
+            </div>      
         </div>
     </mat-toolbar>
+    <mat-sidenav-container class="sidenavMain">
+        <mat-sidenav #drawer mode="side"  class="sideNavmain"  disableClose="true" opened="true" autosize>
+            <mat-nav-list>
+                <mat-list-item class="listItem">
+                    <mat-icon mat-list-icon class="sidenavimg material-icons">lightbulb_outline</mat-icon>
+                    <mat-label class="navLabel">Notes</mat-label>
+                </mat-list-item>
+                <mat-list-item class="listItem">
+                    <mat-icon mat-list-icon class="sidenavimg material-icons">notifications_none</mat-icon>
+                    <mat-label class="navLabel">Reminder</mat-label>
+                </mat-list-item>
+                <mat-list-item class="listItem">
+                    <mat-icon mat-list-icon class="sidenavimg material-icons">label_outline</mat-icon>
+                    <mat-label class="navLabel">Label</mat-label>
+                </mat-list-item>
+                <mat-list-item class="listItem">
+                    <mat-icon mat-list-icon class="sidenavimg material-icons">edit_outline</mat-icon>
+                    <mat-label class="navLabel">Edit lables</mat-label>
+                </mat-list-item>
+                <mat-list-item class="listItem">
+                    <mat-icon mat-list-icon class="sidenavimg material-icons">archive</mat-icon>
+                    <mat-label class="navLabel">Archive</mat-label>
+                </mat-list-item>
+                <mat-list-item class="listItem">
+                    <mat-icon mat-list-icon class="sidenavimg material-icons">delete_outline</mat-icon>
+                    <mat-label class="navLabel">Bin</mat-label>
+                </mat-list-item>
+            </mat-nav-list>
+        </mat-sidenav>
+        <mat-sidenav-content>
+            
+        </mat-sidenav-content>
+    </mat-sidenav-container>
 </div>

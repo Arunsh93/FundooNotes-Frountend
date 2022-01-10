@@ -1,0 +1,33 @@
+.MainCard{
+    display: flex;
+    margin: 0 auto;
+    height: 15px;
+    width: 550px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+    vertical-align: middle;
+    transition: 0.3s;
+    top: 10%;
+    border-radius: 8px;
+    border: 3px #ebf0f7;
+    .sideiconone{
+        padding-right: 30px;
+    }
+    .brush{
+        padding-right: 25px;
+    }
+}
+.dummy-card-title {
+    font-size: 13px;
+    flex-grow: 12;
+    height: 10px !important;
+    input {
+        outline: none;
+        height: 150%;
+        border: none;
+        letter-spacing: .01428571em;
+        font-family: Roboto,Arial,sans-serif;
+        font-size: .980rem;
+        font-weight: 435;
+        line-height: 1.25rem;
+    }
+}

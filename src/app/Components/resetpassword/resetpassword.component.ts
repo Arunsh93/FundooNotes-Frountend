@@ -29,7 +29,11 @@ export class ResetPasswordComponent implements OnInit {
 
   ResetPassword(){
     try{
-      
+      this.userService.ResetPassword(this.ResetPassword.arguments.email, this.ResetPasswordForm.value)
+      .subscribe((result: any) => {
+        if(result.status)
+        console.log("Password Reset Successfully", result);
+      })
     }
     catch(error)
     {
@@ -37,3 +41,4 @@ export class ResetPasswordComponent implements OnInit {
     }
   }
 }
+

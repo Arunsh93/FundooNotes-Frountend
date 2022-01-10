@@ -28,14 +28,14 @@ export class UserserviceService {
   }
 
   ForgotPassword(data: any){
-    let email= data.email
-    return this.httpService.post(`${environment.baseurl}api/forgotPassword?email=${email}`);
+    return this.httpService.post(`${environment.baseurl}api/forgotPassword?EmailId=${data}`);
   }
 
-  ResetPassword(data: any){
+  ResetPassword(email:string,data: any){
     let params = {
-      Password: data.password,
-      ConfirmPassword: data.confirmPassword
+      EmailId: data.email,
+      NewPassword: data.password
     }
+    return this.httpService.put(`${environment.baseurl}api/resetPassword`, params);
   }
 }
